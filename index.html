@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="humburger" id="hambuger_menu">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+
+    <section class="menu_body" id="menubody">
+          <div class="menu_body__item_wrapper">
+            <!-- menu list-->
+            <ul class="menu_list">
+              <li><a href="#">Home</a></li>
+              <!-- have submenu-->
+              <li class="has_child"><a href="#">About</a>
+                <ul class="sub-menu">
+                  <li><a href="#">Who We Are</a></li>
+                  <li><a href="#">Managment</a></li>
+                </ul>
+              </li>
+              <!-- have submenu-->
+              <li class="has_child"><a href="javascript">Projects</a>
+                <ul class="sub-menu">
+                  <li><a href="#">Ongoing</a></li>
+                  <li><a href="#">Complete</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Brochure</a></li>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">Contact Us</a></li>
+            </ul>
+          </div>
+        </section>
+        
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>  
+
+<script type="text/javascript">
+$(document).ready(function () {
+
+  var display_width = $(window).width();
+  var hamburger = $("#hambuger_menu");
+  var menu = $("#menubody");
+
+  $(hamburger).click(function (e) {
+    menu.toggleClass("open");
+    hamburger.toggleClass("open");
+  });
+
+  $(".menu_body__item_wrapper li.has_child").each(function (index) {
+
+    $(this).click(function (event) {
+      $('.sub-menu').eq(index).slideToggle();
+      event.preventDefault();
+      event.stopImmediatePropagation();
+    });
+    
+    $('.sub-menu').click(function (e){
+      e.stopPropagation();
+      e.stopImmediatePropagation();
+    })
+
+  })
+
+})
+
+</script>
+        
+</body>
+</html>
