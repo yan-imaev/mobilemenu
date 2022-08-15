@@ -37,6 +37,15 @@
               <li><a href="#">FAQ</a></li>
               <li><a href="#">Contact Us</a></li>
             </ul>
+            <div class="navbar-contact">
+                <a href="https://instagram.com/ufatransarenda"><img src="http://wpdev/wp-content/themes/ufatransarenda/images/instagram-icon.png" class="navbar-contact-icon" alt=""></a>
+                <a href="8-987-477-7721"><img src="http://wpdev/wp-content/themes/ufatransarenda/images/phone-icon.png" class="navbar-contact-icon" alt=""></a>
+                <div class="navbar-contact-phone">
+                    <a href="tel:8-987-477-7721" class="navbar-contact-phone-link">8-987-477-7721</a>
+                </div>
+                
+            </div>
+            <button class="button-order" data-toggle="modal" data-target="#modalOrder">Расчет аренды</button>
           </div>
         </section>
         
@@ -61,7 +70,7 @@ $(document).ready(function () {
       event.preventDefault();
       event.stopImmediatePropagation();
     });
-    
+
     $('.sub-menu').click(function (e){
       e.stopPropagation();
       e.stopImmediatePropagation();
